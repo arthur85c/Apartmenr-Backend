@@ -1,3 +1,3 @@
 class ListSerializer < ActiveModel::Serializer
-  attributes :id, :name, :houseNo, :stName, :zipcode, :area, :startDate, :endDate, :email, :price
+  attributes :id, :name, :houseno, :stname, :zipcode, :area, :startdate, :enddate, :email, :price, :user_id
 end
