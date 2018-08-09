@@ -1,5 +1,5 @@
 class ListsController < OpenReadController
-  before_action :set_list, only: [:show, :update, :destroy]
+  before_action :set_list, only: [:update, :destroy]
 
   # GET /lists
   def index
@@ -10,6 +10,8 @@ class ListsController < OpenReadController
 
   # GET /lists/1
   def show
+    @list = List.find(params[:id])
+
     render json: @list
   end
 
@@ -46,6 +48,6 @@ class ListsController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def list_params
-      params.require(:list).permit(:name, :houseno, :stname, :zipcode, :area, :startdate, :enddate, :email, :price)
+      params.require(:list).permit(:name, :houseno, :stname, :zipcode, :area, :startdate, :enddate, :email, :price, :city)
     end
 end
